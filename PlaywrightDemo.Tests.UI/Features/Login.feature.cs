@@ -74,14 +74,14 @@ namespace PlaywrightDemo.Tests.UI.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("User can log in successfully")]
+        [NUnit.Framework.DescriptionAttribute("Active user can log in successfully")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void UserCanLogInSuccessfully()
+        public virtual void ActiveUserCanLogInSuccessfully()
         {
             string[] tagsOfScenario = new string[] {
                     "mytag"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User can log in successfully", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Active user can log in successfully", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

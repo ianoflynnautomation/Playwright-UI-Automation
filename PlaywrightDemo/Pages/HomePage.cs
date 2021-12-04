@@ -11,6 +11,7 @@ namespace PlaywrightDemo.Pages
         {
             _page = page;
         }
+
         public async Task<string> Title() => await _page.InnerTextAsync("text=Products");
     }
 }
