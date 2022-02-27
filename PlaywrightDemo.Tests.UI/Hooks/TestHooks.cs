@@ -1,5 +1,6 @@
 ﻿using BoDi;
 using Microsoft.Playwright;
+using Practice.One.UI.Settings;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
@@ -21,11 +22,11 @@ namespace PlaywrightDemo.Tests.UI.Hooks
             var playwright = await Playwright.CreateAsync();
             var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
             {
-                Headless = false,
-                SlowMo = 50,
+                Headless = ConfigurationService.GetWebSettings().HeadLess,
+                SlowMo = ConfigurationService.GetWebSettings().SlowMo,
             });
             var page = await browser.NewPageAsync();
-            //await page.GotoAsync("https://www.saucedemo.com/");
+            await page.GotoAsync(ConfigurationService.GetWebSettings().BaseUrl);
             _objectContainer.RegisterInstanceAs(browser);
             _objectContainer.RegisterInstanceAs(page);
         }
@@ -36,7 +37,6 @@ namespace PlaywrightDemo.Tests.UI.Hooks
         {
             var browser = _objectContainer.Resolve<IBrowser>();
             await browser.CloseAsync();
-
         }
     }
 }

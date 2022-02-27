@@ -1,6 +1,7 @@
 ﻿using Microsoft.Playwright;
 using System.Threading.Tasks;
 
+
 namespace PlaywrightDemo.Pages
 {
     public class LoginPage
@@ -21,6 +22,11 @@ namespace PlaywrightDemo.Pages
             await InputUserName(userName);
             await InputPassword(password);
             await ClickLoginButton();
+        }
+
+        public async Task<string> GetLoginErrorMessage()
+        {
+            return await _page.InnerTextAsync("data-test=error");
         }
     }
 }

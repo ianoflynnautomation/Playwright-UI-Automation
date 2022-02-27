@@ -11,11 +11,11 @@ namespace PlaywrightDemo.Tests.UI.Features
     public class LoginSteps
     {
         private readonly LoginPage _loginPage;
-        private readonly HomePage _homePage;
-        public LoginSteps(LoginPage homepage, HomePage homePage)
+        private readonly ProductsPage _productsPage;
+        public LoginSteps(LoginPage homepage, ProductsPage productsPage)
         {
             _loginPage = homepage;
-            _homePage = homePage;
+            _productsPage = productsPage;
         }
 
         [Given(@"I navigate to the website home page")]
@@ -34,8 +34,15 @@ namespace PlaywrightDemo.Tests.UI.Features
         [Then(@"the user should be logged in successfully")]
         public async Task ThenTheUserShouldBeLoggedInSuccessfully()
         {
-            string expectedTitle = await _homePage.Title();
+            string expectedTitle = await _productsPage.Title();
             expectedTitle.Should().Be("PRODUCTS");
+        }
+
+        [Then(@"the user should not be logged in")]
+        public async void ThenTheUserShouldNotBeLoggedIn()
+        {
+            var errorMessageDisplayed = await _loginPage.GetLoginErrorMessage();
+            errorMessageDisplayed.Should().Be("Epic sadface: Sorry, this user has been locked out.");
         }
     }
 }
