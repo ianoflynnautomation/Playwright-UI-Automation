@@ -31,7 +31,7 @@ steps:
   condition: succeededOrFailed()
 
 - task: VSTest@2
-  displayName: 'VsTest -Run Playwright Tests'
+  displayName: 'VsTest - Run Playwright UI Tests'
   inputs:
     testAssemblyVer2: |
      **\PlaywrightDemo.Tests.UI*.dll
