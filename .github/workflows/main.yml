@@ -15,17 +15,22 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - uses: microsoft/playwright-github-action@v1.5.1
+      - uses: actions/setup-node@v2
       
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v1
-        
+      - uses: microsoft/playwright-github-action@v1.5.
+    
       - name: Install dependencies
         run: dotnet restore
-        
+           
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+         with:
+          dotnet-version: '6.0.x'
+                
       - name: Build
         run: dotnet build --configuration Release --no-restore
+        
+
             
-      - name: Test
-        run: dotnet test --no-restore --verbosity normal
+ 
 
