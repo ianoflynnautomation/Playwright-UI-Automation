@@ -35,7 +35,7 @@ namespace PlaywrightDemo.Tests.UI.Features
         public async Task ThenTheUserShouldBeLoggedInSuccessfully()
         {
             string expectedTitle = await _productsPage.Title();
-            expectedTitle.Should().Be("PRODUCTS");
+             expectedTitle.Should().Be("PRODUCTS");
         }
 
         [Then(@"the user should not be logged in")]
