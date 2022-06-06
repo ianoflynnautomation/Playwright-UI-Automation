@@ -40,7 +40,6 @@ namespace Practice.One.UI.Settings
 
         private static IConfigurationRoot InitializeConfiguration()
         {
-            //var executionDir = ExecutionDirectoryResolver.GetAssemblyDirectory;
             var filesInExecutionDir = Directory.GetFiles(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             var settingsFile = filesInExecutionDir.FirstOrDefault(x => x.Contains("appSettings") && x.EndsWith(".json"));
             var builder = new ConfigurationBuilder();

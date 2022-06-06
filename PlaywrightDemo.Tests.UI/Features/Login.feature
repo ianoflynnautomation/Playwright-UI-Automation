@@ -1,6 +1,6 @@
 ﻿Feature: Login
 
-@mytag
+@regression
 Scenario: Active user can log in successfully
 	Given I navigate to the website home page
 	When I login with a valid users credentials
@@ -8,7 +8,7 @@ Scenario: Active user can log in successfully
 		| standard_user | secret_sauce |
 	Then the user should be logged in successfully
 
-@mytag
+@regression
 Scenario: Locked Out user can NOT log in successfully
 	Given I navigate to the website home page
 	When I login with a valid users credentials
@@ -16,7 +16,7 @@ Scenario: Locked Out user can NOT log in successfully
 		| locked_out_user | secret_sauce |
 	Then the user should not be logged in
 
-@mytag
+@regression
 Scenario: Problem user can log in successfully
 	Given I navigate to the website home page
 	When I login with a valid users credentials
@@ -24,7 +24,7 @@ Scenario: Problem user can log in successfully
 		| problem_user | secret_sauce |
 	Then the user should be logged in successfully
 
-@mytag
+@regression
 Scenario: Performance Glitch user can log in successfully
 	Given I navigate to the website home page
 	When I login with a valid users credentials
