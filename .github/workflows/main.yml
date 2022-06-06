@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+    branches: [ "master" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+            
+      - uses: microsoft/playwright-github-action@v1
+    
+      - name: Install dependencies
+        run: dotnet restore
+        
+      - name: Install Playwright dependencies
+        run: npx playwright install 
+                        
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+                
+      - name: Run SpecFlow Tests
+        uses: cryptic-wizard/run-specflow-tests@v1.2.0        
+        with:
+           test-assembly-path: PlaywrightDemo\PlaywrightDemo.Tests.UI\bin\Debug\net6.0
+           test-assembly-dll: PlaywrightDemo\PlaywrightDemo\bin\Debug\net6.0\PlaywrightDemo.dll
+ 
+
