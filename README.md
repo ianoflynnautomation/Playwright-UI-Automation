@@ -1,1 +1,1 @@
-# Playwright Demo with Specflow using c#
+# Playwright for .NET Demo with Specflow
