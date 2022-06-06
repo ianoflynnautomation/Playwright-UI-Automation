@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v3
@@ -24,7 +24,7 @@ jobs:
         run: dotnet restore
         
       - name: Install Playwright dependencies
-        run: npx playwright install 
+        run: playwright install 
                         
       - name: Build
         run: dotnet build --configuration Release --no-restore
