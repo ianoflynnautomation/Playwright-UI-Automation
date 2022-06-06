@@ -34,5 +34,5 @@ jobs:
         with:
            test-assembly-path: PlaywrightDemo\PlaywrightDemo.Tests.UI\bin\Debug\net6.0
            test-assembly-dll: PlaywrightDemo\PlaywrightDemo.Tests.UI\bin\Debug\net6.0\PlaywrightDemo.Tests.UI.dll
- 
+           test-execution-json: PlaywrightDemo\PlaywrightDemo.Tests.UI\bin\Debug\net6.0\PlaywrightDemo.Tests.UI.runtimeconfig.json
 
