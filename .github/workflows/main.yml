@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  e2e-tests:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,7 +26,10 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
         
-
-            
+      - name: Run SpecFlow Tests
+        uses: cryptic-wizard/run-specflow-tests@v1.2.0        
+        with:
+           test-assembly-path: PlaywrightDemo\PlaywrightDemo.Tests.UI\bin\Debug\net6.0
+           test-assembly-dll: PlaywrightDemo\PlaywrightDemo\bin\Debug\net6.0\PlaywrightDemo.dll
  
 
