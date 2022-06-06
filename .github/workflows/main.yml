@@ -24,6 +24,7 @@ jobs:
         run: dotnet restore
         
       - name: Install Playwright dependencies
+        shell: pwsh
         run: playwright install 
                         
       - name: Build
