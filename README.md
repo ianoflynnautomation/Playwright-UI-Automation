@@ -1,8 +1,10 @@
-# Playwright for .NET Demo with Specflow and Github Actions
+# Playwright for dotnet Demo with Specflow
 
 ## Introduction
 
 Sample UI automation project using Playwright, Specflow, .Net and C#
 
-https://playwright.dev/dotnet/
+Using Github Actions for Continuous Integration.
+
+Playwright dotnet url: https://playwright.dev/dotnet/
 
