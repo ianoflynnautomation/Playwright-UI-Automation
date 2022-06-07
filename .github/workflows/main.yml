@@ -35,5 +35,6 @@ jobs:
            test-assembly-path: PlaywrightDemo\PlaywrightDemo.Tests.UI\bin\Debug\net6.0
            test-assembly-dll: PlaywrightDemo\PlaywrightDemo.Tests.UI\bin\Debug\net6.0\PlaywrightDemo.Tests.UI.dll
            test-execution-json: PlaywrightDemo\PlaywrightDemo.Tests.UI\bin\Debug\net6.0\PlaywrightDemo.Tests.UI.runtimeconfig.json
+           framework: net6.0
            output-html: MyTestResults.html
            no-build: true
