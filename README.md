@@ -1,4 +1,4 @@
-# Playwright for .NET Demo with Specflow with Github Actions
+# Playwright for .NET Demo with Specflow and Github Actions
 
 ## Introduction
 
